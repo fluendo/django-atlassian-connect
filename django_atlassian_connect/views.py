@@ -207,7 +207,7 @@ class ApplicationDescriptor(TemplateView):
         context["vendor_name"] = self.get_vendor_name()
         context["vendor_url"] = self.get_vendor_url()
         context["scopes"] = self.get_scopes()
-        context["licensing"] = self.get_licensing()
+        context["licensing"] = "true" if self.get_licensing() else "false"
 
         return context
 
