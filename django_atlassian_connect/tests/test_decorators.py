@@ -13,7 +13,7 @@ class JWTRequiredDecoratorTests(TestCase):
         def view(request):
             pass
 
-        decorated_view = jwt_required(normal_view)
+        decorated_view = jwt_required(view)
         self.assertTrue(decorated_view.jwt_required)
 
     def test_func_decorator(self):
@@ -21,7 +21,7 @@ class JWTRequiredDecoratorTests(TestCase):
         def view(request):
             pass
 
-        self.assertTrue(normal_view.jwt_required)
+        self.assertTrue(view.jwt_required)
 
 
 class JWTQshExemptTests(TestCase):
@@ -30,7 +30,7 @@ class JWTQshExemptTests(TestCase):
         def view(request):
             pass
 
-        self.assertTrue(normal_view.jwt_qsh_exempt)
+        self.assertTrue(view.jwt_qsh_exempt)
 
 
 class EnableLicensingTests(TestCase):
@@ -40,4 +40,4 @@ class EnableLicensingTests(TestCase):
         def view(request):
             pass
 
-        self.assertTrue(normal_view.enable_licensing)
+        self.assertTrue(view.enable_licensing)
